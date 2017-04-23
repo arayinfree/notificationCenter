@@ -2,13 +2,13 @@
 provides a mechanism for broadcasting information within a program buy lua
 
 # feature
-. easy to use
-. does not holding observer 
-. remove/add observe in callback func safty
+* easy to use
+* does not holding observer 
+* remove/add observe in callback func safty
 
 # API
 ```
--- add observer for event with func. func prototype func(self ,data ,obj)
+-- add observer for event with func. func prototype : func(self ,data ,obj)
 function notificationCenter:addObserve(event,observer,func)
 
 -- remove observer for specify event ,or if event == nil ,remove all event for observer
