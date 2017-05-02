@@ -47,13 +47,13 @@ function notificationCenter:post(event,data,obj)
     if  self.listener[event] then
         local colist = {}
         for observer ,func in pairs(self.listener[event]) do
-            co = coroutine.create(function ()
+            co = function ()
                 func(observer,data,obj)
-            end)
+            end
             table.insert( colist, co )
         end
         for k,v in pairs(colist) do
-            coroutine.resume(v)
+            v()
         end
         colist = nil;
     end
